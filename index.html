@@ -13,76 +13,49 @@
 </head>
 
 <body>
-    <nav>
+<!-- Header -->
+    <nav style= "background-color: #3C887E;">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
+            <a href="#!" class="center brand-logo"><h4>The Book Worm</h4></a>
+            <form>
+                <div class="input-field col s6">
+                  <input id="search" type="search" type="text" required>
+                  <label class="label-icon" for="search"><i class="material-icons right">search</i></label>
+                  <label class="active searchDirection" style= "color: white;; font-size: 20px;" for="search">Search a Book here...</label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
         </div>
     </nav>
+    
 
+<!-- Where we'll dump the rendered book titles from the search -->
     <div class="searchDiv">
 
+    <div container="results">
+      <div class="row">
+        <div class="col s12"><h5>Top Recommendations</h5></div>   
+      </div>
+    </div>
+<!-- Where the Library cards should go in -->
+    <div container="library" id="display">
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">search</i>
-                        <textarea id="icon_prefix2" class="material-icons"></textarea>
-                        <label for="icon_prefix">Search for a book...</label>
-                    </div>
-                </div>
-            </form>
+          <div class="col s12"><h5>Your Library</h5></div>   
+          <div class="row">
+              <div class="col s2 addBook">1</div>
+              <div class="col s2">2</div>
+              <div class="col s2">1</div>
+              <div class="col s2">2</div>
+              <div class="col s2">1</div>
+              <div class="col s2">2</div>
+          </div>        
         </div>
-        <h4>
-            Top Options
-        </h4>
-        <div class="container">
-            <div class="row">
-                <div class="col s3 addBook">1</div>
-                <div class="col s3">2</div>
-                <div class="col s3">1</div>
-                <div class="col s3">2</div>
-            </div>
-        </div>
+      </div>
+ 
 
-    </div>
-    <div class="libraryDiv">
-        <h4>
-            Library
-        </h4>
-        <div class="container">
-            <div class="row">
-                <div class="col s2 addBook">1</div>
-                <div class="col s2">2</div>
-                <div class="col s2">1</div>
-                <div class="col s2">2</div>
-                <div class="col s2">1</div>
-                <div class="col s2">2</div>
-            </div>
-        </div>
-    </div>
     <footer>
 
     </footer>
 </body>
 
 </html>
-
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>BookWorms</title>
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="scriptHA.js"></script>
-
-</body>
-
-</html>
-
