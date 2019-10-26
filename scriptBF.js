@@ -1,9 +1,8 @@
-function displayBookInfo(){
+function displayBookPreview(){
 
 var apiKeyGoogle = "AIzaSyBzrVa4fIYwGQhY0ZJKd3knqqKAmXrp1IM"
 var searchTitle = "the hobbit"
 var numberOfBooks = 5
-var language = "en"
 var queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + searchTitle + "&key=" + apiKeyGoogle;
 
 $.ajax({
@@ -29,5 +28,6 @@ $.ajax({
     });
 }
 
-$(document).on("click", ".book-search", displayMovieInfo);
+$(document).on("click", ".book-search", displayBookPreview);
+
 
