@@ -1,3 +1,7 @@
+var nytApiKey = "XxNStNBahslMckwWpoKsfnbkXiQ6SkF1";
+var nytUrl = "https://api.nytimes.com/svc/books/v3//reviews.json?title=" + Becoming + "&api-key=" + nytApiKey;
+
+
 
 var apiKeyGoogle = "AIzaSyBzrVa4fIYwGQhY0ZJKd3knqqKAmXrp1IM"
 var searchTitle = "harry potter"
