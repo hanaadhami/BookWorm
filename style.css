@@ -1,7 +1,3 @@
-body {
-    background: url(assets/fridge.png) no-repeat;
-  }
-
   .card-wrapper {
     width: 20%;
     display: flex;
