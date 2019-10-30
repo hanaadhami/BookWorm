@@ -12,21 +12,28 @@ $.ajax({
     {
     console.log(response)
     console.log(response.items[0].volumeInfo.imageLinks.thumbnail)
-    for (var i =0; i<numberOfBooks; i++){
+    for (var i =0; i < numberOfBooks; i++){
+        var cardWrapper = $("<div>");
         var bookContainer = $("<div>");
         var title = response.items[i].volumeInfo.title;
         var authors = response.items[i].volumeInfo.authors[0];
         var coverArt = response.items[i].volumeInfo.imageLinks.thumbnail;
         var isbn = response.items[i].volumeInfo.industryIdentifiers[0].identifier;
 
-        bookContainer.append($('<p>' + title + '</p>'))
-        bookContainer.append($('<p>' + authors + '</p>'))
-        bookContainer.append($('<img src=' + coverArt +'>'))
-        bookContainer.append($('<p>' + isbn +'</p>'))
-        $('#book-preview').prepend(bookContainer)
+        cardWrapper.addClass("card-wrapper col s2");
+        bookContainer.addClass("container card");
+        bookContainer.attr("data-name", isbn);
+
+        bookContainer.append($('<img src=' + coverArt +'>'));
+        bookContainer.append($('<h4 style="font-size:1.3rem;text-align:center;">' + title + '</h4>'));
+        bookContainer.append($('<p style="font-style:italic;text-align:center;">' + authors + '</p>'));
+        bookContainer.append($('<p style="text-align:center;">' + isbn +'</p>'));
+        cardWrapper.append(bookContainer);
+        $('#book-cards').append(cardWrapper);
         };
     });
 }
+
 
 $(document).on("click", ".book-search", displayBookPreview);
 

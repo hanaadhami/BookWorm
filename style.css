@@ -2,9 +2,14 @@ body {
     background: url(assets/fridge.png) no-repeat;
   }
 
+  .card-wrapper {
+    width: 20%;
+    display: flex;
+    background: #e0e0ff;
+  }
   .card {
-    width: 175px;
-    height: 250px;
+    width: 250px;
+    height: 350px;
     border-style: transparent;
     padding: 10px;
     float: center;
