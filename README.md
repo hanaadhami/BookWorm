@@ -7,4 +7,4 @@ I WANT to find a new read
 SO THAT I can read more books
 
 # APIs to be used
-Goodreads, Open Library
+NYT Reviews, Open Library

@@ -37,3 +37,12 @@
     border-style: solid;
     width: 100px;
   }
+
+#logo {
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  .warning {
+    color: #C03221;
+  }
