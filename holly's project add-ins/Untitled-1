@@ -1,0 +1,16 @@
+ //If local Storage is decided//
+localStorage.setItem("whatever needs to be saved", "savedBooks")
+var readBook = localStorage.getItem("whatever is retrieved")
+localStorage.removeItem("whatever book that gets removed")
+var savedBooks = setItem("whatever needs to be saved")
+localStorage.clear("savedBooks");
+
+   //If Session Storage is Decided//
+
+var URL = "https//: google.com" //fill in with actual URL's used for searching//
+sessionStorage.setItem(URL, "GET");
+var savedBooks = sessionStorage.setItem(URL, "GET")
+let data = sessionStorage.getItem(savedBooks);
+sessionStorage.removeItem(savedBooks);
+sessionStorage.clear(savedBooks)
+
