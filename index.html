@@ -34,6 +34,7 @@
             </form>
         </div>
     </nav>
+
     <div class="webContent">
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -49,6 +50,42 @@
             <div class="modal-footer">
                 <a href="#!" class="modalNone modal-close waves-effect waves-green btn-flat">Close</a>
                 <a href="#!" class="modalNone modal-add waves-effect waves-green btn-flat">Add</a>
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4 id='bookTitle'></h4>
+        <p id='summaryBook'></p>
+        <hr>
+        <p id='noReview' class='warning'></p>
+        <p id='reviewAuthor'></p>
+        <p id='summaryReview'></p>
+        <p><a id='reviewCont' href=""></a></p>
+        </div>
+    <div class="modal-footer">
+        <a href="#!" class="modalNone modal-close waves-effect waves-green btn-flat">Close</a>
+        <a href="#!" class="modal-add waves-effect waves-green btn-flat">Add</a>
+    </div>
+    </div>
+<!-- Modal Trigger <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>-->
+
+<!-- Where we'll dump the rendered book titles from the search -->
+    <div class="searchDiv">
+    <div  container="results">
+        <div  class="row">
+        <div class="col s12"><h5>Top Recommendations</h5></div>
+        </div>
+        <div id="book-results" class="row">
+        </div>
+    </div>
+<!-- Where the Library cards should go in -->
+    <div container="library" id="display">
+        <div class="row">
+            <div class="col s12"><h5>Your Library</h5></div>˜
+            <div id="library" class="row">
+
+
             </div>
         </div>
 
