@@ -14,8 +14,8 @@ $.ajax({
     method: "GET"
     }).then(function(response)
     {
-    console.log(response)
-    console.log(response.items[0].volumeInfo.imageLinks.smallThumbnail)
+    // console.log(response)
+    // console.log(response.items[0].volumeInfo.imageLinks.smallThumbnail)
     for (var i =0; i < numberOfBooks; i++){
         var cardWrapper = $("<div>");
         var bookContainer = $("<div>");
@@ -63,12 +63,12 @@ $.ajax({
         };
         modalBtns.forEach((modalBtn) =>
         modalBtn.addEventListener('click', function(e){
-            console.log("modal btns inside: ", modalBtns)
+            // console.log("modal btns inside: ", modalBtns)
             modalFunction(modalBtn.getAttribute("data-name"));
             e.preventDefault();
             $(".modal").css("display","block")
             $(".modal").css('z-index', 3000);
-
+            
 // close button
 
             $(".modal-close").click(function() {
@@ -80,9 +80,9 @@ $.ajax({
                 $('#reviewCont').empty()
                 $('#summaryReview').empty()
 
-              });
+            });
 // Add button, still need to have it add books to the library
-              $(".modal-add").click(function() {
+            $(".modal-add").click(function() {
 
                 $(".modal").css("display","none")
                 $('#noReview').empty()
@@ -90,8 +90,41 @@ $.ajax({
                 $('#reviewCont').empty()
                 $('#reviewCont').empty()
                 $('#summaryReview').empty()
+            
+                var apiKeyGoogle = "AIzaSyBzrVa4fIYwGQhY0ZJKd3knqqKAmXrp1IM"
+                var libraryTitle = modalBtn.getAttribute("data-name");
+                var queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + libraryTitle + "&key=" + apiKeyGoogle;
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                    }).then(function(response){
+                        for (var i =0; i < 1; i++){
+                        console.log(response.items[0].volumeInfo.title);
+                        console.log(response.items[0].volumeInfo.imageLinks.smallThumbnail);
 
-              });
+                        var libraryWrapper = $('<div>');
+                        var libraryContainer = $('<div>');
+                        var libraryImageDiv = $('<div>');
+                        var libraryCardContent = $('<div>')
+                        
+                        var libraryTitle = response.items[0].volumeInfo.title;
+                        var libraryImg = response.items[0].volumeInfo.imageLinks.smallThumbnail;
+
+                        libraryWrapper.addClass("col s4 m2");
+                        libraryContainer.addClass("card");
+                        libraryImageDiv.addClass("card-image");
+                        libraryCardContent.addClass("card-content");
+
+                        libraryCardContent.append($('<h4 style="font-size:1.3rem;">' + libraryTitle + '</h4>'));
+                        libraryImageDiv.append($('<img src=' + libraryImg +'>'));
+
+                        libraryContainer.append(libraryImageDiv);
+                        libraryContainer.append(libraryCardContent);
+
+                        libraryWrapper.append(libraryContainer);
+                        $('#library').append(libraryWrapper);
+                    }});
+            });
         }))
     });
 };
@@ -111,18 +144,17 @@ function modalFunction(t){
     // New York Times API key
 var nytApiKey = "XxNStNBahslMckwWpoKsfnbkXiQ6SkF1";
 var modalBookTitle = t
-console.log("modalBookTitle is: rr ", modalBookTitle);
 var nytURL = "https://api.nytimes.com/svc/books/v3//reviews.json?title=" + modalBookTitle + "&api-key=" + nytApiKey;
 // getting the New York Times review
 $.ajax({
     url: nytURL,
     method: "GET"
 }).then(function (NYTresponse) {
-    console.log("nytresponse ", NYTresponse)
+    // console.log("nytresponse ", NYTresponse)
     // need to add these values for the modal once we get information from google books API
     /*  $("#review").html(response.results[0].byline); */
     $('#bookTitle').html(modalBookTitle);
-    console.log("modalBookTitle ", modalBookTitle)
+    // console.log("modalBookTitle ", modalBookTitle)
     if (NYTresponse.num_results == 0) {
         $('#noReview').html('There are no reviews available for this title.');
         $('.modalNone').html('close');
