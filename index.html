@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>
         BookWorm
@@ -11,21 +12,45 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-<!-- Header -->
-    <nav style= "background-color: #3C887E;">
+    <!-- Header -->
+    <div class="logoTitle">
+        <img class="logoImg" src="images/bookWorm3.png">
+        <div class="headerLabel">Search for a Book bellow...</div>
+        <div class="appTitle">BookWorm</div>
+
+    </div>
+    <nav style="background-color: #3C887E;">
         <div class="nav-wrapper">
-            <a href="#!" class="center brand-logo"><h4>The Book Worm</h4></a>
             <form>
                 <div class="input-field col s6">
                     <input id="search" type="search" type="text" required>
-                    <label class="label-icon" for="search"><i id="search-icon" class="material-icons right">search</i></label>
-                    <label class="active searchDirection" style= "color: white;; font-size: 20px;" for="search">Search a Book here...</label>
+                    <label class="label-icon" for="search"><i id="search-icon"
+                            class="material-icons right">search</i></label>
+                    <label class="active searchDirection" style="color: white;; font-size: 20px;" for="search"></label>
                     <i class="material-icons">close</i>
                 </div>
-                </form>
+            </form>
         </div>
     </nav>
+
+    <div class="webContent">
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4 id='bookTitle'></h4>
+                <p id='summaryBook'></p>
+                <hr>
+                <p id='noReview' class='warning'></p>
+                <p id='reviewAuthor'></p>
+                <p id='summaryReview'></p>
+                <p><a id='reviewCont' href=""></a></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modalNone modal-close waves-effect waves-green btn-flat">Close</a>
+                <a href="#!" class="modalNone modal-add waves-effect waves-green btn-flat">Add</a>
+
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
@@ -60,12 +85,36 @@
             <div class="col s12"><h5>Your Library</h5></div>˜
             <div id="library" class="row">
 
+
             </div>
         </div>
+
+        <!-- Where we'll dump the rendered book titles from the search -->
+        <div class="searchDiv">
+            <div container="results">
+                <div class="row">
+                    <div class="col s12">
+                        <h5>Top Recommendations</h5>
+                    </div>
+                </div>
+                <div id="book-results" class="row">
+                </div>
+            </div>
+            <!-- Where the Library cards should go in -->
+            <div container="library" id="display">
+                <div class="row">
+                    <div class="col s12">
+                        <h5>Your Library</h5>
+                    </div>
+                    <div id="library" class="row">
+                    </div>
+                </div>
+            </div>
+            <footer>
+            </footer>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="script.js"></script>
         </div>
-        <footer>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="script.js"></script>
 </body>
+
 </html>

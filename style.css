@@ -1,3 +1,7 @@
+body {
+  background-image: url("images/backgroundImage.png");
+}
+
 .warning {
     color: #C03221;
     }
@@ -31,3 +35,37 @@
   .modal-close {
     color: #C03221;
     }
+
+
+.logoTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3C887E;
+  padding: 2px 10px;
+  width: 100%;
+}
+
+.appTitle {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+nav {
+  box-shadow: none;
+}
+
+.logoImg {
+  height: 75px;
+}
+
+.webContent {
+  margin: 20px;
+}
+
+.headerLabel {
+  color: white;
+  font-size: 16px;
+}
