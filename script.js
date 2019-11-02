@@ -110,7 +110,7 @@ $.ajax({
                         var libraryTitle = response.items[0].volumeInfo.title;
                         var libraryImg = response.items[0].volumeInfo.imageLinks.smallThumbnail;
 
-                        libraryWrapper.addClass("col s4 m2");
+                        libraryWrapper.addClass("col s4 m2 saved-books");
                         libraryContainer.addClass("card");
                         libraryImageDiv.addClass("card-image");
                         libraryCardContent.addClass("card-content");
@@ -123,6 +123,7 @@ $.ajax({
 
                         libraryWrapper.append(libraryContainer);
                         $('#library').append(libraryWrapper);
+
                     }});
             });
         }))
